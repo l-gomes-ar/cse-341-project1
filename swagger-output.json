@@ -5,9 +5,9 @@
     "description": "CSE 341 - Project 1: Contacts API",
     "version": "1.0.0"
   },
-  "host": "https://cse-341-project1-cvuv.onrender.com",
+  "host": "cse-341-project1-cvuv.onrender.com",
   "basePath": "/",
-  "schemes": ["http"],
+  "schemes": ["https"],
   "paths": {
     "/api-docs": {
       "get": {
