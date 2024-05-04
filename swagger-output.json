@@ -31,7 +31,7 @@
     },
     "/contacts/": {
       "get": {
-        "description": "",
+        "description": "Retrieve all contacts in database",
         "produces": ["application/json"],
         "responses": {
           "200": {
@@ -40,7 +40,7 @@
         }
       },
       "post": {
-        "description": "",
+        "description": "Create a contact",
         "produces": ["application/json"],
         "parameters": [
           {
@@ -83,7 +83,7 @@
     },
     "/contacts/{id}": {
       "get": {
-        "description": "",
+        "description": "Retrieve single contact by id",
         "produces": ["application/json"],
         "parameters": [
           {
@@ -100,7 +100,7 @@
         }
       },
       "put": {
-        "description": "",
+        "description": "Update a contact by id",
         "produces": ["application/json"],
         "parameters": [
           {
@@ -144,7 +144,7 @@
         }
       },
       "delete": {
-        "description": "",
+        "description": "Delete a contact by id",
         "parameters": [
           {
             "name": "id",

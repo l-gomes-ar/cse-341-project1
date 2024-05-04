@@ -2,6 +2,9 @@ const mongodb = require("../data/database");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAll = async (req, res) => {
+  /* 
+    #swagger.description = "Retrieve all contacts in database"
+  */
   const result = await mongodb.getDatabase().db().collection("contacts").find();
   result.toArray().then((contacts) => {
     res.setHeader("Content-Type", "application/json");
@@ -10,6 +13,9 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+  /* 
+    #swagger.description = "Retrieve single contact by id"
+  */
   const contactId = new ObjectId(req.params.id);
   const result = await mongodb.getDatabase().db().collection("contacts").find({ _id: contactId });
   result.toArray().then((contact) => {
@@ -19,6 +25,9 @@ const getSingle = async (req, res) => {
 };
 
 const create = async (req, res) => {
+  /* 
+    #swagger.description = "Create a contact"
+  */
   if (
     !req.body.firstName ||
     !req.body.lastName ||
@@ -47,6 +56,9 @@ const create = async (req, res) => {
 };
 
 const update = async (req, res) => {
+  /* 
+    #swagger.description = "Update a contact by id"
+  */
   const contactId = new ObjectId(req.params.id);
   try {
     const result = await mongodb
@@ -76,6 +88,9 @@ const update = async (req, res) => {
 };
 
 const deleteContact = async (req, res) => {
+  /* 
+    #swagger.description = "Delete a contact by id"
+  */
   const contactId = new ObjectId(req.params.id);
   try {
     const result = await mongodb
